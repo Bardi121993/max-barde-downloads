@@ -1,65 +1,137 @@
-import Image from "next/image";
+import ContentCard from "@/app/components/ContentCard";
+import { articles, ebooks, summaries } from "@/lib/content";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main style={{ backgroundColor: "#0a0a0a", minHeight: "100vh" }}>
+
+      {/* ─── Hero ─────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden px-6 pb-24 pt-24 text-center">
+        {/* subtle radial glow */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(251,191,36,0.08) 0%, transparent 70%)",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+
+        <div className="relative mx-auto max-w-3xl">
+          <span
+            className="mb-6 inline-block rounded-full border px-4 py-1.5 text-xs font-medium tracking-widest uppercase"
+            style={{ borderColor: "#2a2a2a", color: "#71717a" }}
+          >
+            Free Knowledge Hub
+          </span>
+
+          <h1 className="mb-5 text-5xl font-black tracking-tight text-white md:text-6xl lg:text-7xl">
+            Max{" "}
+            <span style={{ color: "#fbbf24" }}>Barde</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed" style={{ color: "#71717a" }}>
+            Articles, ebooks, and book summaries on performance, longevity,
+            psychology, and philosophy — all free for you.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#content"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-80"
+            style={{ backgroundColor: "#fbbf24", color: "#0a0a0a" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Browse free resources
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </a>
         </div>
-      </main>
+      </section>
+
+      {/* ─── Divider ──────────────────────────────────────────────── */}
+      <div className="mx-auto max-w-6xl px-6">
+        <div style={{ height: "1px", backgroundColor: "#1a1a1a" }} />
+      </div>
+
+      {/* ─── Content sections ─────────────────────────────────────── */}
+      <div id="content" className="mx-auto max-w-6xl space-y-20 px-6 py-20">
+
+        {/* Articles */}
+        <section>
+          <SectionHeader
+            label="Articles"
+            title="Deep dives & insights"
+            description="Evidence-based writing on the topics that matter most for your performance and wellbeing."
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {articles.map((item) => (
+              <ContentCard key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+
+        {/* Ebooks */}
+        <section>
+          <SectionHeader
+            label="Ebooks"
+            title="Practical guides"
+            description="Actionable, no-fluff guides you can read in an afternoon and apply the same day."
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {ebooks.map((item) => (
+              <ContentCard key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+
+        {/* Book Summaries */}
+        <section>
+          <SectionHeader
+            label="Book Summaries"
+            title="Key ideas, fast"
+            description="The best ideas from the best books — distilled so you get the value without the time cost."
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {summaries.map((item) => (
+              <ContentCard key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* ─── Footer ───────────────────────────────────────────────── */}
+      <footer
+        className="border-t px-6 py-10 text-center"
+        style={{ borderColor: "#1a1a1a" }}
+      >
+        <p className="text-sm" style={{ color: "#3f3f46" }}>
+          © {new Date().getFullYear()} Max Barde · All rights reserved
+        </p>
+      </footer>
+    </main>
+  );
+}
+
+function SectionHeader({
+  label,
+  title,
+  description,
+}: {
+  label: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="mb-8">
+      <span
+        className="mb-2 inline-block text-xs font-semibold uppercase tracking-widest"
+        style={{ color: "#fbbf24" }}
+      >
+        {label}
+      </span>
+      <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
+      <p className="max-w-lg text-sm leading-relaxed" style={{ color: "#52525b" }}>
+        {description}
+      </p>
     </div>
   );
 }
