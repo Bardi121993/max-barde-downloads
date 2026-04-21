@@ -66,9 +66,9 @@ export default function DownloadModal({ item, onClose }: Props) {
           <div className="text-center">
             <div
               className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full"
-              style={{ backgroundColor: "rgba(251, 191, 36, 0.1)" }}
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.08)" }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
@@ -80,7 +80,7 @@ export default function DownloadModal({ item, onClose }: Props) {
             <button
               onClick={onClose}
               className="mt-6 w-full rounded-xl py-3 text-sm font-medium transition-opacity hover:opacity-80"
-              style={{ backgroundColor: "#fbbf24", color: "#0a0a0a" }}
+              style={{ backgroundColor: "#ffffff", color: "#0a0a0a" }}
             >
               Done
             </button>
@@ -90,7 +90,7 @@ export default function DownloadModal({ item, onClose }: Props) {
             <div className="mb-6">
               <span
                 className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-medium"
-                style={{ backgroundColor: "rgba(251, 191, 36, 0.1)", color: "#fbbf24" }}
+                style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", color: "#ffffff" }}
               >
                 Free Download
               </span>
@@ -112,7 +112,7 @@ export default function DownloadModal({ item, onClose }: Props) {
                   backgroundColor: "#1a1a1a",
                   borderColor: "#2a2a2a",
                 }}
-                onFocus={(e) => (e.target.style.borderColor = "#fbbf24")}
+                onFocus={(e) => (e.target.style.borderColor = "#ffffff")}
                 onBlur={(e) => (e.target.style.borderColor = "#2a2a2a")}
               />
 
@@ -124,7 +124,7 @@ export default function DownloadModal({ item, onClose }: Props) {
                 type="submit"
                 disabled={status === "loading" || !email}
                 className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-opacity disabled:opacity-50"
-                style={{ backgroundColor: "#fbbf24", color: "#0a0a0a" }}
+                style={{ backgroundColor: "#ffffff", color: "#0a0a0a" }}
               >
                 {status === "loading" ? (
                   <>

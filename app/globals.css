@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.nav-link {
+  border-color: #2a2a2a;
+  color: #a1a1aa;
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}

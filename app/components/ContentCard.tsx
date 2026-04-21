@@ -22,22 +22,22 @@ export default function ContentCard({ item }: Props) {
       <div
         className="group flex flex-col rounded-2xl border p-6 transition-all duration-300"
         style={{
-          backgroundColor: "#111111",
-          borderColor: "#1f1f1f",
+          backgroundColor: "#0f0f0f",
+          borderColor: "#1a1a1a",
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.borderColor = "#2a2a2a";
+          (e.currentTarget as HTMLDivElement).style.borderColor = "#333333";
           (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.borderColor = "#1f1f1f";
+          (e.currentTarget as HTMLDivElement).style.borderColor = "#1a1a1a";
           (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
         }}
       >
         {/* Category badge */}
         <span
           className="mb-4 inline-block self-start rounded-full px-3 py-1 text-xs font-medium"
-          style={{ backgroundColor: "rgba(251, 191, 36, 0.08)", color: "#fbbf24" }}
+          style={{ backgroundColor: "#1a1a1a", color: "#a1a1aa" }}
         >
           {categoryLabel[item.category]}
         </span>
@@ -69,9 +69,9 @@ export default function ContentCard({ item }: Props) {
           className="flex w-full items-center justify-center gap-2 rounded-xl border py-2.5 text-sm font-medium transition-all duration-200"
           style={{ borderColor: "#2a2a2a", color: "#a1a1aa" }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#fbbf24";
-            (e.currentTarget as HTMLButtonElement).style.borderColor = "#fbbf24";
-            (e.currentTarget as HTMLButtonElement).style.color = "#0a0a0a";
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#ffffff";
+            (e.currentTarget as HTMLButtonElement).style.borderColor = "#ffffff";
+            (e.currentTarget as HTMLButtonElement).style.color = "#080808";
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
