@@ -69,10 +69,10 @@ export default function Home() {
 
           {/* Right — Photo */}
           <div className="relative flex w-full items-end justify-center md:w-[45%]">
-            {/* Gradient fade — left edge (very strong, covers full arm) */}
+            {/* Gradient fade — left edge only, targeted */}
             <div
-              className="absolute inset-y-0 left-0 z-10 w-3/5 hidden md:block pointer-events-none"
-              style={{ background: "linear-gradient(to right, #080808 0%, #080808 50%, transparent 100%)" }}
+              className="absolute inset-y-0 left-0 z-10 w-2/5 hidden md:block pointer-events-none"
+              style={{ background: "linear-gradient(to right, #080808 0%, #080808 20%, rgba(8,8,8,0.6) 60%, transparent 100%)" }}
             />
             {/* Gradient fade — right edge */}
             <div
