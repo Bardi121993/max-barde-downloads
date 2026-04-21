@@ -69,22 +69,32 @@ export default function Home() {
 
           {/* Right — Photo */}
           <div className="relative flex w-full items-end justify-center md:w-[45%]">
-            {/* Gradient fade on left edge */}
+            {/* Gradient fade — left edge (strong, covers the arm) */}
             <div
-              className="absolute inset-y-0 left-0 z-10 w-32 hidden md:block"
-              style={{ background: "linear-gradient(to right, #080808, transparent)" }}
+              className="absolute inset-y-0 left-0 z-10 w-2/5 hidden md:block pointer-events-none"
+              style={{ background: "linear-gradient(to right, #080808 0%, #080808 30%, transparent 100%)" }}
             />
-            {/* Gradient fade on bottom */}
+            {/* Gradient fade — right edge */}
             <div
-              className="absolute bottom-0 left-0 right-0 z-10 h-24"
-              style={{ background: "linear-gradient(to top, #080808, transparent)" }}
+              className="absolute inset-y-0 right-0 z-10 w-16 hidden md:block pointer-events-none"
+              style={{ background: "linear-gradient(to left, #080808, transparent)" }}
+            />
+            {/* Gradient fade — bottom */}
+            <div
+              className="absolute bottom-0 left-0 right-0 z-10 h-40 pointer-events-none"
+              style={{ background: "linear-gradient(to top, #080808 0%, transparent 100%)" }}
+            />
+            {/* Gradient fade — top */}
+            <div
+              className="absolute top-0 left-0 right-0 z-10 h-16 pointer-events-none"
+              style={{ background: "linear-gradient(to bottom, #080808, transparent)" }}
             />
             <div className="relative h-[70vh] w-full max-w-sm md:max-w-none md:h-[85vh]">
               <Image
                 src="/max-photo.jpg"
                 alt="Max Barde"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 priority
               />
             </div>
