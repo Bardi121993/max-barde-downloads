@@ -30,8 +30,7 @@ export default function Home() {
             </div>
 
             <h1 className="mb-6 text-5xl font-black leading-[1.0] tracking-tight text-white md:text-6xl lg:text-7xl">
-              Train your body.<br />
-              <span style={{ color: "#a1a1aa", fontWeight: 300 }}>Master your mind.</span>
+              Both/and
             </h1>
 
             <p className="mb-10 max-w-md text-base leading-relaxed" style={{ color: "#71717a" }}>
